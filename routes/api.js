@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const { application } = require("express");
 const db = require("../models/workout.js");
 
 // add exercises to most recent workout plan
@@ -29,5 +30,25 @@ router.get("/api/workouts/range", (req,res) => {
 });
 
 // POST request
+router.post("/api/workouts", (req,res) => {
+    db.Workout.create({})
+        .then(data => { 
+            res.json(data);
+        })
+        .catch((err) => {
+            res.json(err);
+        });
+});
+
+// PUT request for adding
+router.put("/api/workouts/:id", (req,res) => {
+    db.Workout.findByIdAndUpdate(req.params.id,
+        {$push: {exercises: req.body}}
+    )
+    .then(data => res.json(data))
+    .catch(err => {
+        res.json(err);
+    });
+});
 
 module.exports = router;
