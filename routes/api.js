@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const { application } = require("express");
-const db = require("../models/workout.js");
+const db = require("../models/Workout.js");
 
 // add exercises to most recent workout plan
 // add new exercises to a NEW workout plan
