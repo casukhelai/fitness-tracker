@@ -15,9 +15,9 @@ This is a daily fitness tracker app using an Express server and MongoDB with a M
 1. To run the application
 ``` node server.js ```
 
-![demo1](assets/demo1)
-![demo2](assets/demo2)
-![demo3](assets/demo3)
+![demo1](assets/demo1.png)
+![demo2](assets/demo2.png)
+![demo3](assets/demo3.png)
 
 ## License
 MIT License
